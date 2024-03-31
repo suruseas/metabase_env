@@ -1,0 +1,13 @@
+version: '3'
+services:
+  metabase:
+    image: metabase/metabase:latest
+    platform: linux/amd64
+    volumes:
+      - ./metabase-data:/metabase-data
+    environment:
+      - MB_DB_FILE=/metabase-data/metabase.db
+    ports:
+      - 5001:3000
+volumes:
+  metabase-data:
